@@ -20,6 +20,8 @@ jobs:
       run: dotnet --info
     - name: Checkout code
       uses: actions/checkout@v4
+    - name: Display current directory
+      run: cd
     - name: Change directory to src
       run: cd src
     - name: Restore dependencies
