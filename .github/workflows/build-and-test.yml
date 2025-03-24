@@ -22,15 +22,13 @@ jobs:
       uses: actions/checkout@v4
     - name: Display current directory
       run: pwd
-    - name: Change directory to src
-      run: cd src
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore .\src\Na.Core.sln
     - name: Build (Debug)
-      run: dotnet build --configuration Debug --no-restore
+      run: dotnet build .\src\Na.Core.sln --configuration Debug --no-restore
     - name: Test (Debug)
-      run: dotnet test --configuration Debug --no-restore --verbosity normal
+      run: dotnet test .\src\Na.Core.sln --configuration Debug --no-restore --verbosity normal
     - name: Build (Release)
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build .\src\Na.Core.sln --configuration Release --no-restore
     - name: Test (Release)
-      run: dotnet test --configuration Release --no-restore --verbosity normal
+      run: dotnet test .\src\Na.Core.sln --configuration Release --no-restore --verbosity normal
